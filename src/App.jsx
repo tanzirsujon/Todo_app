@@ -9,7 +9,7 @@ function App() {
         <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div>
       </div>
 
-      <header>
+      <header className="bg-slate-400">
         <Navbar />
       </header>
       <main>

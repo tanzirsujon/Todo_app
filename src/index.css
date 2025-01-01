@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .btn{
+        @apply font-bold font-roboto h-9 max-h-20 w-[5rem] rounded-md
+    }
+}
