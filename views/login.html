@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class=" h-[100vh] w-[100vw] flex justify-center overflow-hidden">
+    <div class="container flex justify-between items-center">
+        <div class="bgimg w-[70vw]">
+            <img src="../resources/img/Sign up-rafiki.png" alt="" class="w-[40vw]">
+        </div>
+        <div class="formcontainerh h-[100vh]   w-[30vw] flex justify-center items-center">
+
+
+            <form action="/login" method="post"
+                class="flex flex-col  gap-5 justify-center h-[65vh] w-[28vw] items-center rounded-2xl ">
+                <h1 class="btnfont font-bold text-gray-100">Log In</h1>
+                <div class="user flex flex-col">
+                    <label for="username" class="monoFont">Username</label>
+                    <input type="text" name="username" required placeholder="ex:john_Doe" class="inp1">
+                </div>
+
+
+                <div class="pass flex flex-col">
+                    <label for="password" class="monoFont">Password</label>
+                    <input type="password" name="password" title="password" required class="inp1"
+                        placeholder="password">
+                </div>
+                <div class="flex gap-2">
+                    <input type="submit" value="login" class=" btn btnfont w-40 h-8 text-white rounded-md ">
+                    <span>
+                        <a href="/signup">
+                            <button type="button"
+                                class="btnfont w-40 h-8 text-black rounded-md hover:underline decoration-white underline-offset-4">signup</button>
+                        </a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
