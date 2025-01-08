@@ -15,8 +15,8 @@ function App() {
       <main>
         <Main />
       </main>
-      <footer className="  fixed bottom-0">
-        hey im footer
+      <footer className="  fixed bottom-0 left-[45%] font-roboto text-center font-bold">
+        &copy; Tanzir_Sujon
       </footer>
     </>
   );
