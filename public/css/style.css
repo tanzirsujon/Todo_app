@@ -1,48 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:wght@100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:wght@100..700&display=swap");
 
 .inp1 {
-    padding-left: 10px;
-    margin: 10px 0px;
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    height: 6vh;
-    width: 23vw;
-    outline: none;
-    
-    border-radius: 3px;
+  padding-left: 10px;
+  margin: 10px 0px;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  height: 6vh;
+  width: 23vw;
+  outline: none;
 
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 3px;
+
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .monoFont {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
 }
 
 .btnfont {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 700;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
 }
 
 form {
-    background: rgb(151 187 230);
-
+  /* background: rgb(151 187 230); */
 }
 
 body {
-    background: linear-gradient(0.25turn, #c898a1, #9d9de6, rgb(250, 211, 211));
+  /* background: linear-gradient(0.25turn, #c898a1, #9d9de6, rgb(250, 211, 211)); */
 }
 
 .btn {
-    background-color: rgba(103, 161, 255, 1);
+  background-color: rgba(103, 161, 255, 1);
 }
 
 .formcontainerh label {
-    color: whitesmoke;
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 700;
+  color: whitesmoke;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
+
+/* Table container */
+h1 {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+/* Header styling */
+thead {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+thead th {
+  padding: 10px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Body styling */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody td {
+  padding: 10px;
+  border: 1px solid #dddddd;
+  word-wrap: break-word;
+  text-align: left;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
+
+/* Links styling */
+tbody td a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+tbody td a:hover {
+  text-decoration: underline;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Optional: Table borders */
+table {
+  border: 1px solid #dddddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background-color: rgba(103, 161, 255, 1);
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
 }

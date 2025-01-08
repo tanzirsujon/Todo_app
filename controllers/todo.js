@@ -11,7 +11,7 @@ async function todoHandler(req, res) {
             createdBy: req.user._id
         })
         await newTodo.save();
-        res.status(201).json({ "user": "insert succesfully" })
+        res.status(201).redirect('/todo')
     } catch (error) {
         console.log(`got an error in signup ${error}`)
 
