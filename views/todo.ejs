@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/output.css" />
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-</head>
-
-<body class="">
+  <body class="">
     <div class="w-full h-full flex flex-col items-center justify-center m-auto">
-        <div class="inputContainer">
-            <h1>welcome <%= user %>
-            </h1>
+      <div class="inputContainer">
+        <h1>welcome <%= user %></h1>
 
-            <form action="/todo" class="flex flex-col justify-center items-center" method="post">
-                <input class="inp1" type="text" name="title" placeholder="title" />
-                <input class="inp1" type="text" name="desc" placeholder="desc" />
-                <input class="inp1" type="date" name="dueDate" />
-                <input class="btn" type="submit" value="submit" />
-            </form>
-        </div>
-        <div class="displayContainer w-[80%] h-auto">
-            <% if (locals.todos) { %>
-                <table>
-                    <thead>
-                        <th>S. No</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Due Date</th>
-                        <th>update</th>
-                        <th>Delete</th>
-                    </thead>
-                    <tbody>
-                        <% todos.forEach((item, index)=> { %>
-                            <tr>
-                                <td>
-                                    <%= index + 1 %>
-                                </td>
-                                <td>
-                                    <%= item.title %>
-                                </td>
-                                <td>
-                                    <%= item.desc %>
-                                </td>
-                                <td>
-                                    <%=new Date(item.dueDate).toLocaleDateString('en-US') %>
-                                </td>
-                                <td>
-                                    <button onclick=" updateTodo(' <%= item._id %>') ">Edit</button>
-                                </td>
-                                <td>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
-                            <% }) %>
-                    </tbody>
-                </table>
-                <% } %>
-        </div>
+        <form
+          action="/todo"
+          class="flex flex-col justify-center items-center"
+          method="post"
+        >
+          <input
+            class="inp1"
+            type="text"
+            name="title"
+            placeholder="title"
+            required
+          />
+          <input
+            class="inp1"
+            type="text"
+            name="desc"
+            placeholder="desc"
+            required
+          />
+          <input class="inp1" type="date" name="dueDate" required />
+          <input class="btn" type="submit" value="submit" />
+        </form>
+      </div>
+      <div class="displayContainer w-[80%] h-auto">
+        <% if (locals.todos) { %>
+        <table>
+          <thead>
+            <th>Status</th>
+            <th>S. No</th>
+
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>update</th>
+            <th>Delete</th>
+          </thead>
+          <tbody>
+            <% todos.forEach((item, index)=> { %>
+
+            <tr id="todo-<%= item._id %>">
+              <td>
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  id="check-<%= item._id %>"
+                  onclick="isClicked('<%= item._id %>')"
+                />
+                Completed?
+              </td>
+              <td><%= index + 1 %></td>
+              <td contenteditable="false"><%= item.title %></td>
+              <td contenteditable="false"><%= item.desc %></td>
+              <td contenteditable="false">
+                <%=new Date(item.dueDate).toLocaleDateString('en-US') %>
+              </td>
+              <td>
+                <button class="" onclick="updateTodo('<%= item._id %>')">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button onclick="deleteTodo('<%= item._id %>')">Delete</button>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } %>
+      </div>
     </div>
-</body>
-
+    <script src="./js/index.js"></script>
+  </body>
 </html>
