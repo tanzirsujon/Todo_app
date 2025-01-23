@@ -8,81 +8,125 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
-  <body class="">
-    <div class="w-full h-full flex flex-col items-center justify-center m-auto">
-      <div class="inputContainer">
-        <h1>welcome <%= user %></h1>
-
-        <form
-          action="/todo"
-          class="flex flex-col justify-center items-center"
-          method="post"
+  <body class=" bg-blue-200"> 
+    <header class="max-w-[80%] mx-auto bg-slate-500 my-2 rounded-sm">
+      <nav class="h-11 w-full flex justify-around items-center">
+        <div class="name btnfont text-slate-300">ToDo-App</div>
+        <ul
+          class="flex justify-center items-center gap-9 btnfont text-slate-300"
         >
-          <input
-            class="inp1"
-            type="text"
-            name="title"
-            placeholder="title"
-            required
-          />
-          <input
-            class="inp1"
-            type="text"
-            name="desc"
-            placeholder="desc"
-            required
-          />
-          <input class="inp1" type="date" name="dueDate" required />
-          <input class="btn" type="submit" value="submit" />
-        </form>
-      </div>
-      <div class="displayContainer w-[80%] h-auto">
-        <% if (locals.todos) { %>
-        <table>
-          <thead>
-            <th>Status</th>
-            <th>S. No</th>
+          <li><a href="/">Home</a></li>
+          <li><a href="/todo">ToDo</a></li>
+          <li><a href="/login">LogIn</a></li>
+          <li><a href="/signup">SignUp</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div
+        class="w-full h-full flex flex-col items-center justify-center m-auto"
+      >
+        <div class="inputContainer">
+          <h1>welcome <%= user %></h1>
 
-            <th>Title</th>
-            <th>Description</th>
-            <th>Due Date</th>
-            <th>update</th>
-            <th>Delete</th>
-          </thead>
-          <tbody>
-            <% todos.forEach((item, index)=> { %>
+          <form
+            action="/todo"
+            class="flex flex-col justify-center items-center bg-slate-700 h-64 w-[30rem] rounded-sm"
 
-            <tr id="todo-<%= item._id %>">
-              <td>
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  id="check-<%= item._id %>"
-                  onclick="isClicked('<%= item._id %>')"
-                />
-                Completed?
-              </td>
-              <td><%= index + 1 %></td>
-              <td contenteditable="false"><%= item.title %></td>
-              <td contenteditable="false"><%= item.desc %></td>
-              <td contenteditable="false">
-                <%=new Date(item.dueDate).toLocaleDateString('en-US') %>
-              </td>
-              <td>
-                <button class="" onclick="updateTodo('<%= item._id %>')">
-                  Edit
-                </button>
-              </td>
-              <td>
-                <button onclick="deleteTodo('<%= item._id %>')">Delete</button>
-              </td>
-            </tr>
-            <% }) %>
-          </tbody>
-        </table>
-        <% } %>
+            method="post"
+          >
+            <input
+              class="inp1"
+              type="text"
+              name="title"
+              placeholder="title"
+              required
+            />
+            <input
+              class="inp1"
+              type="text"
+              name="desc"
+              placeholder="desc"
+              required
+            />
+            <input class="inp1" type="date" name="dueDate" required />
+            <input
+              class="h-11 w-24 bg-blue-500 text-white text-center rounded-sm text-xl font-mono hover:bg-blue-600 cursor-pointer"
+              type="submit"
+              value="submit"
+            />
+          </form>
+        </div>
+
+        <div class="displayContainer w-[80%] h-auto">
+          <% if (locals.todos) { %>
+          <table>
+            <thead>
+              <th>Status</th>
+              <th>S. No</th>
+
+              <th>Title</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>update</th>
+              <th>Delete</th>
+            </thead>
+            <tbody>
+              <% todos.forEach((item, index)=> { %>
+
+              <tr id="todo-<%= item._id %>">
+                <td>
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    id="check-<%= item._id %>"
+                    onclick="isClicked('<%= item._id %>')"
+                  />
+                  Completed?
+                </td>
+                <td><%= index + 1 %></td>
+                <td contenteditable="false"><%= item.title %></td>
+                <td contenteditable="false"><%= item.desc %></td>
+                <td contenteditable="false">
+                  <%=new Date(item.dueDate).toLocaleDateString('en-US') %>
+                </td>
+                <td>
+                  <button class="" onclick="updateTodo('<%= item._id %>')">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button onclick="deleteTodo('<%= item._id %>')">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <% } %>
+          <div class="btns flex justify-around items-center w-full h-16 my-5">
+            <button
+              id="prev_btn"
+              class="h-11 w-24 bg-slate-400 text-white text-center rounded-sm text-xl font-mono hover:bg-slate-500"
+            >
+              Prev
+            </button>
+            <button
+              id="next_btn"
+              class="h-11 w-24 bg-slate-400 text-white text-center rounded-sm text-xl font-mono hover:bg-slate-500"
+            >
+              Next
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
+    <footer class="fixed bottom-0 right-0">
+      <p class="text-slate-800 btnfont">
+        All Rights Reserve to &copy Tanzir_Sujon
+      </p>
+    </footer>
     <script src="./js/index.js"></script>
   </body>
 </html>

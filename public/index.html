@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo app</title>
-    <link rel="stylesheet" href="./css/output.css">
-</head>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
-    <header class="bg-blue-100">hey</header>
-</body>
-
+  <body class="body_bg">
+    <header class="max-w-[80%] mx-auto bg-slate-500 my-2 rounded-sm">
+      <nav class="h-11 w-full flex justify-around items-center">
+        <div class="name btnfont text-slate-300">ToDo-App</div>
+        <ul
+          class="flex justify-center items-center gap-9 btnfont text-slate-300"
+        >
+          <li><a href="/">Home</a></li>
+          <li><a href="/todo">ToDo</a></li>
+          <li><a href="/login">LogIn</a></li>
+          <li><a href="/signup">SignUp</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="h-[80vh] w-full flex justify-center items-center">
+      <div class="inputContainer flex justify-center items-center ">
+        <form
+          action="/todo"
+          class="flex flex-col justify-center items-center bg-slate-700 h-72 w-[30rem] rounded-xl gap-3"
+          method="post"
+        >
+          <input
+            class="inp1"
+            type="text"
+            name="title"
+            placeholder="title"
+            required
+          />
+          <input
+            class="inp1"
+            type="text"
+            name="desc"
+            placeholder="desc"
+            required
+          />
+          <input title="date" class="inp1" type="date" name="dueDate" required />
+          <input
+            class="h-11 w-24 bg-blue-500 text-white text-center rounded-sm text-xl font-mono hover:bg-blue-600 cursor-pointer"
+            type="submit"
+            value="submit"
+          />
+        </form>
+      </div>
+    </main>
+    <footer class="fixed bottom-0 right-0">
+      <p class="text-slate-800 btnfont">
+        All Rights Reserve to &copyTanzir_Sujon
+      </p>
+    </footer>
+  </body>
 </html>

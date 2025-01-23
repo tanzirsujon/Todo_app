@@ -24,9 +24,7 @@ app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
 app.use("/todo", onlyLoggedUserHandler, todoRoutes);
 app.use("/todo/update", todoUdate_DelteRoutes);
-app.get("/", (req, res) => {
-  res.send("hello i am working🤚");
-});
+
 
 app.listen(Port, () => {
   console.log(`Server listening in http://localhost:${Port}/ `);

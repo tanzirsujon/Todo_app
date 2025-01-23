@@ -29,11 +29,11 @@
 }
 
 form {
-  /* background: rgb(151 187 230); */
+  background: rgb(151 187 230);
 }
 
-body {
-  /* background: linear-gradient(0.25turn, #c898a1, #9d9de6, rgb(250, 211, 211)); */
+.body_bg {
+  background: linear-gradient(0.25turn, #c898a1, #9d9de6, rgb(250, 211, 211));
 }
 
 .btn {
